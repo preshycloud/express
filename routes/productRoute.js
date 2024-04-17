@@ -4,22 +4,28 @@ const {getAllProducts, getSingleProducts, createNewProducts, updateProducts, del
 const router = express.Router()
 
 
-// get all products
-router.get('/products', getAllProducts )
+// get all products...get
+// router.get('/products', getAllProducts )
 
 
-// get a single product
-router.get('/products/:id', getSingleProducts)
+// get a single product....get
+// router.get('/products/:id', getSingleProducts)
 
-// create a product
-router.post('/products', createNewProducts)
+// create a product...post
+// router.post('/products', createNewProducts)
 
-// updating a product
-router.put('/products/:id', updateProducts )
+// updating a product....put
+// router.put('/products/:id', updateProducts )
 
 
-// delete a product
-router.delete('/products/:id', deleteProducts)
+// delete a product....delete
+// router.delete('/products/:id', deleteProducts)
+
+
+
+router.route('/products').get(getAllProducts).post(createNewProducts)
+
+router.route('/products/:id').get(getSingleProducts).put(updateProducts).delete(deleteProducts)
 
 
 module.exports = router
